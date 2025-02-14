@@ -49,6 +49,9 @@ func New(unikernelType string) (Unikernel, error) {
 	case UnikraftUnikernel:
 		unikernel := newUnikraft()
 		return unikernel, nil
+	case NanosUnikernel:
+		unikernel := newNanos()
+		return unikernel, nil
 	default:
 		return nil, ErrNotSupportedUnikernel
 	}
